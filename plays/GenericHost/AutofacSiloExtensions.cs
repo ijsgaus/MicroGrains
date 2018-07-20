@@ -62,7 +62,7 @@ namespace GenericHost
                     await _siloHost.StopAsync(cancellationToken);
                     await _siloHost.Stopped;
                     _siloHost.Dispose();
-                    _scope.Dispose();
+                    //_scope.Dispose();
                 }
             }
 

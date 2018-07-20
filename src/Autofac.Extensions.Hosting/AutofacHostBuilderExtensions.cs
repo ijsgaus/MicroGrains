@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Autofac.Core;
-using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Autofac.Extensions.Hosting
 {
@@ -14,7 +12,8 @@ namespace Autofac.Extensions.Hosting
     {
         public static IHostBuilder UseAutofac(this IHostBuilder builder, Action<ContainerBuilder> configure = null)
         {
-            builder.UseServiceProviderFactory(new AutofacServiceProviderFactory(configure));
+            builder.UseServiceProviderFactory(new GenericHostAutofacServiceProviderFactory(configure));
+            /*builder.UseServiceProviderFactory(new AutofacServiceProviderFactory(configure));
             builder.ConfigureContainer<ContainerBuilder>((_, cb) => cb.RegisterBuildCallback(cr =>
             {
                 var lifetime =  cr.Resolve<IApplicationLifetime>();
@@ -26,10 +25,10 @@ namespace Autofac.Extensions.Hosting
                     logger.LogTrace("Autofac container disposed");
                 });
 
-            }));
+            }));*/
             return builder;
         }
-
+        
         public static IHostBuilder ConfigureAutofac(this IHostBuilder builder,
             Action<HostBuilderContext, ContainerBuilder> configure)
             =>  builder.ConfigureContainer(configure);
@@ -56,10 +55,9 @@ namespace Autofac.Extensions.Hosting
                     foreach (var item in constructors)
                     {
                         var parameters = item.GetParameters();
-                        var known = parameters.All(info => knownTypes.ContainsKey(info.ParameterType));
-                        if(!known) continue;
                         if (parameters.Length <= cnt) continue;
-
+                        if(!parameters.All(info => knownTypes.ContainsKey(info.ParameterType))) continue;
+                        
                         cnt = parameters.Length;
                         constructor = item;
                         constrParams = parameters;
