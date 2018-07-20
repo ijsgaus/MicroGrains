@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayInterfacesA", "plays\Pl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGrainsA", "plays\PlayGrainsA\PlayGrainsA.csproj", "{A4AB74B9-9944-4E35-B88D-19F6DE8C5F50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autofac.Extensions.Hosting", "src\Autofac.Extensions.Hosting\Autofac.Extensions.Hosting.csproj", "{DA8CC73B-BF14-4729-8432-00A2728653B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,7 @@ Global
 		{C6F90219-0C99-43BD-981B-F56A94774DEF} = {D01938DC-57F2-443A-9EEB-908E94DABFA0}
 		{A5C3DEDC-483E-4941-BAF6-F0E0934B93B1} = {D01938DC-57F2-443A-9EEB-908E94DABFA0}
 		{A4AB74B9-9944-4E35-B88D-19F6DE8C5F50} = {D01938DC-57F2-443A-9EEB-908E94DABFA0}
+		{DA8CC73B-BF14-4729-8432-00A2728653B7} = {F04D2763-C0EF-432A-B677-D0CD19FB8858}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C6F90219-0C99-43BD-981B-F56A94774DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -33,5 +36,9 @@ Global
 		{A4AB74B9-9944-4E35-B88D-19F6DE8C5F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4AB74B9-9944-4E35-B88D-19F6DE8C5F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4AB74B9-9944-4E35-B88D-19F6DE8C5F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8CC73B-BF14-4729-8432-00A2728653B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8CC73B-BF14-4729-8432-00A2728653B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8CC73B-BF14-4729-8432-00A2728653B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8CC73B-BF14-4729-8432-00A2728653B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
